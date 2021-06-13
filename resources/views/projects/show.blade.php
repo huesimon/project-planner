@@ -18,7 +18,7 @@
                             <div class="flex flex-row justify-between">
                                 <div>{{ $user->name }}</div>
                                 <div class="flex flex-row justify-between space-x-4 ">
-                                    @foreach ($user->Skills as $skill)
+                                    @foreach ($user->skills as $skill)
                                         {{ $skill->name }} ({{ $skill->level }})
                                     @endforeach
                                 </div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 {{-- Add team mebmer livewire component start --}}
-                <livewire:add-member-to-project :project='$project'>
+                <livewire:add-member-to-project :project='$project' :skills='$skills' :users='$users'>
                 {{-- Add team mebmer livewire component end --}}
             </div>
         </div>

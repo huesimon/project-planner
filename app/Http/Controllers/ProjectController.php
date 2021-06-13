@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Skill;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -54,7 +56,9 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         return view('projects.show', [
-            'project' => $project
+            'project' => $project,
+            'skills' => Skill::all(),
+            'users' => User::all(),
         ]);
     }
 
