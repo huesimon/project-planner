@@ -17,9 +17,10 @@
                         @foreach ($project->users as $user)
                             <div class="flex flex-row justify-between">
                                 <div>{{ $user->name }}</div>
-                                <div>
-                                    Vue, php, laravel
-                                    {{-- use user->skills --}}
+                                <div class="flex flex-row justify-between space-x-4 ">
+                                    @foreach ($user->Skills as $skill)
+                                        {{ $skill->name }} ({{ $skill->level }})
+                                    @endforeach
                                 </div>
                             </div>
                         @endforeach
