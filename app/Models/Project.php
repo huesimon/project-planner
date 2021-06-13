@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-
+    protected $guarded = [];
+    
     public function Users()
     {
         return $this->belongsToMany(User::class, 'project_user');
