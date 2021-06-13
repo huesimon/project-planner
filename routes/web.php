@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::resources([
     'projects' => ProjectController::class,
+    'skills' => SkillController::class,
 ]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
