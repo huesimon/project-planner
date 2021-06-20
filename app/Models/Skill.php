@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     protected $guarded = [];
-    
+
     use HasFactory;
+
+    public function Users()
+    {
+        return $this->belongsToMany(User::class, 'skill_user');
+    }
 }

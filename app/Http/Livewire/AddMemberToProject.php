@@ -32,13 +32,15 @@ class AddMemberToProject extends Component
             }
         }
         $this->users = collect($users); 
-        $this->selectedUser = $this->users->first();
+
+        $this->selectedUser = $this->users->first()->id ?? null;
     }
 
     public function add()
     {
         $this->project->users()->attach($this->selectedUser);
-
+        $this->selectedSkill = null;
+        $this->users = User::all();
         // Send event to refresh list
         $this->emit('projectMemberAdded');
     }

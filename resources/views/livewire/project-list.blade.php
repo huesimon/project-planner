@@ -2,7 +2,7 @@
     @foreach ($projects as $project)
         <div class="flex flex-row justify-between items-center mb-8">
             <div>{{ $project->name }}</div>
-            <div>
+            <div class="max-w-md">
                 @foreach ($project->users as $user)
                     {{ $user->name }}
                     @if (!$loop->last)

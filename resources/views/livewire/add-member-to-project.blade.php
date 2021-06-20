@@ -6,10 +6,15 @@
         
         <div class="flex flex-row space-x-4 items-center">
             <p class="text-lg">User</p>
-            <select wire:model="selectedUser">
-                @foreach ($users as $user)
-                    <option value="{{ $user->id ?? 0}}" class="">{{ $user->name ?? 0 }}</option>
-                @endforeach
+            <p>{{ $selectedUser }} hey</p>
+            <select wire:model="selectedUser" class="max-w-md">
+                <option value=''>Choose user</option>
+                
+                    
+                    @foreach ($users as $user)
+                        <option value="{{ $user->id }}"> {{ $user->name }}</option>
+                    @endforeach
+                
             </select>
         </div>
         
