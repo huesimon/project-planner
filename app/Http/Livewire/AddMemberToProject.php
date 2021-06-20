@@ -31,7 +31,8 @@ class AddMemberToProject extends Component
                 }
             }
         }
-        $this->users = $users; 
+        $this->users = collect($users); 
+        $this->selectedUser = $this->users->first();
     }
 
     public function add()
@@ -39,5 +40,6 @@ class AddMemberToProject extends Component
         $this->project->users()->attach($this->selectedUser);
 
         // Send event to refresh list
+        $this->emit('projectMemberAdded');
     }
 }

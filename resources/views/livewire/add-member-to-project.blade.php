@@ -6,9 +6,9 @@
         
         <div class="flex flex-row space-x-4 items-center">
             <p class="text-lg">User</p>
-            <select wire:model="selectedUser" id="">
+            <select wire:model="selectedUser">
                 @foreach ($users as $user)
-                    <option value="{{ $user->id }}" class="">{{ $user->name }}</option>
+                    <option value="{{ $user->id ?? 0}}" class="">{{ $user->name ?? 0 }}</option>
                 @endforeach
             </select>
         </div>
