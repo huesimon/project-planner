@@ -18,7 +18,7 @@
             <select wire:model='selectedSkill' name="" id="">
                 <option value="" selected >Choose skill</option>
                 @foreach ($skills as $skill)
-                    <option value="{{ $skill->id }}" class="">{{ $skill->name }}</option>
+                    <option value="{{ $skill->id }}" class="">{{ $skill->name }} : {{ $skill->level }}</option>
                 @endforeach
             </select>
         </div>
