@@ -12,6 +12,8 @@ class CreateProject extends Component
     public function create()
     {
         Project::create(['name' => $this->name]);
+        $this->emit('projectAdded');
+        $this->name = '';
     }
     public function render()
     {
