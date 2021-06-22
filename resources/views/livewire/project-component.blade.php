@@ -7,7 +7,9 @@
         @foreach ($project->users as $user)
             <div class="flex flex-row mb-4 justify-between items-center">
                 <div class="flex flex-row space-x-4">
-                    <div class="w-32 h-32 bg-red-500"></div>
+                    <div class="bg-rose-300">
+                        <img class="object-contain h-48" src="{{ $user->profile_photo_path }}">
+                    </div>
                     <div class="flex flex-col">
                         <div class="">{{ $user->name }}</div>
                         <div class="">
