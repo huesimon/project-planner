@@ -2,7 +2,34 @@ Demo: http://hammernemt.dk/
 
 # Setup
 
-TODO
+- Clone the project
+- run `composer install`
+- Create a .env file
+- Fill in the .env file with your values (signifly api key)
+- Run `php artisan migrate` for migrations (database)
+- Run ` php artisan init:signifly` to generate user data from the api
+- Run `php artisan serve` to start the webserver
+- The project should now be up and running on `http://127.0.0.1:8000/` 
+
+
+# Instructions 
+
+## How to create a project
+After you login, go visit the dashboard, and click on the projects menu.
+
+You are now on the projects page, and you'll see a input field. Here you can input the name of the project.
+
+After clicking create, you should now see the created project above.
+
+Click `go to` to see the project page.
+
+You will now see two select menus, one with users and another with skills.
+
+If you select a skill, you will only see users with that skill in the users select.
+
+After you found a user, click `add`
+
+You will now see the user added to the project, along with their contact information.
 
 # Notes
 
@@ -16,15 +43,16 @@ TODO
  - [x] Create user (Jetstream auth)
  - [x] Create a project
  - [x] A project has a collection of users
- - [ ] Create a skill
+ - [x] Create a skill
+ - [x] Delete projects
+ - [x] Remove users from a project
  - [ ] Create employment for user
  - [x] Select box based on for projects based on user skills
  - [ ] Calculator function after / while creating project
- - [ ] Project overview with user's skills / employment / contact info
+ - [x] Project overview with user's skills / employment / contact info
+ - [ ] Validations on the input fields
 
 
 # Bugs
 
-## Project
-
-- After selecting a skill from the dropdown, and selecting a user from the refreshed list. This error will be thrown "Trying to get property 'id' of non-object "
+- Limit relations, fx: one user can be on the same project many times. 

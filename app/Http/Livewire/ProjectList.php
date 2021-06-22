@@ -20,4 +20,10 @@ class ProjectList extends Component
     {
         $this->projects = Project::all();
     }
+
+    public function delete(Project $project)
+    {
+        $project->delete();
+        $this->refreshProjects();
+    }
 }
