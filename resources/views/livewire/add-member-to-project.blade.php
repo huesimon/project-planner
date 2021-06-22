@@ -6,7 +6,9 @@
         
         <div class="flex flex-row space-x-4 items-center">
             <p class="text-lg">User</p>
-            <p>{{ $selectedUser }} hey</p>
+            @if ($selectedUser)
+                <span> ID: {{ $selectedUser }}</span>     
+            @endif
             <select wire:model="selectedUser" class="max-w-md">
                 <option value=''>Choose user</option>
                 
@@ -19,7 +21,11 @@
         </div>
         
         <div class="flex flex-row spapce-x-4 items-center">
-            <p class="text-lg">Skills: {{ $selectedSkill }}</p>
+            <p class="text-lg">Skills
+                @if ($selectedSkill)
+                    <span> ID: {{ $selectedSkill }}</span>     
+                @endif
+            </p>
             <select wire:model='selectedSkill' name="" id="">
                 <option value="" selected >Choose skill</option>
                 @foreach ($skills as $skill)
