@@ -1,5 +1,7 @@
 Demo: http://hammernemt.dk/
 
+db diagram: https://dbdiagram.io/d/60d22ec4dd6a5971481a9439
+
 # Setup
 
 - Clone the project
